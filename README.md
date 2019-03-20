@@ -1,4 +1,4 @@
-#Calculate the p-value significance of Spearman's rank correlation coefficient (Spearman's rho)
+# Calculate the p-value significance of Spearman's rank correlation coefficient (Spearman's rho)
 Spearman's rho is a measure of the monotonic correlation between two variables.
 A useful property of Spearman's rho is that a p value can be
 calculated determine the significance of the correlation.  The 
