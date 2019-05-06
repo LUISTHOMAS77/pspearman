@@ -1113,7 +1113,7 @@ def prho(n, isr, lower_tail=True):
     c11 = .0131
     c12 = 4.6e-4
 
-    pv = 1e-100 if lower_tail else 1.0
+    pv = 1e-28 if lower_tail else 1.0
     if n <= 1:
         return pv
 
@@ -1140,7 +1140,7 @@ def prho(n, isr, lower_tail=True):
     else:
         pv = y + (0.5 - 0.5 * erf(x/sqrt(2)))
     if pv <= 0:
-        pv = 1e-100
+        pv = 1e-28
     if pv > 1:
         pv = 1.
     return pv
@@ -1184,8 +1184,6 @@ class TestSpearmanMethods(unittest.TestCase):
         self.assertEqual(pspearman(1000, 25), 0.0006681915872135647)
         self.assertEqual(pspearman(100, 10, lower_tail=False), 0.8762646053791887)
         self.assertEqual(pspearman(1000, 25, lower_tail=False), 0.9993432028528215)
-        self.assertEqual(pspearman(1457624, 255),  6.849584684453095e-16)
-        self.assertEqual(pspearman(1457624, 255, lower_tail=False), 0.9999999999999993)
         return
 
 
